@@ -2,48 +2,118 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MyBank Qmatic</title>
+  <title>Qmatic</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center">
-        <h1>MyBank</h1>
+        <h1>Sistema automatizado de colas de MyBank</h1>
         <br>
-        <h2>Sistema Automatizado de Colas</h2>
+        <h2>Clientes</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <br>
+          <h3>Selecione una opcion:</h3>
+          <ul>
+            <li>
+              Taquilla 
+              <input type="button" class="btn btn-primary" id="newTicket" onclick="new_ticket(1)" value="Tomar ticket">
+            </li>
+            <li>
+              Taquilla Especial 
+              <input type="button" class="btn btn-primary" id="newTicket" onclick="new_ticket(2)" value="Tomar ticket">
+            </li>
+            <li>
+              Atencion al Cliente
+              <input type="button" class="btn btn-primary" id="newTicket" onclick="new_ticket(3)" value="Tomar ticket">
+            </li>
+            <li>
+              Atencion al Cliente Especial
+              <input type="button" class="btn btn-primary" id="newTicket" onclick="new_ticket(4)" value="Tomar ticket"> 
+            </li>
+          </ul>
+          
+        </div>
+        <div class="col-md-6 text-center" id="ticketgenerado">
+         <button class="btn btn-success btn-lg" type="button">
+          <span id="newticket"></span>
+        </button>
+        <h4>Hay <span id="people"></span> personas delante de usted.</h4>
+        <h4>Tiempo de espera aproximado: <span id="waitingtime"></span> minutos</h4>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2>Agentes</h2>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
-        <form>
-          <div class="form-group">
-            <label for="operacion">¿Qué operacion desea realizar?</label>
-            <select class="form-control">
-              <option>Operaciones de Taquilla</option>
-              <option>Operaciones de Taquilla (Especial)</option>
-              <option>Atencion al Cliente</option>
-              <option>Atencion al Cliente (Especial)</option>
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary">Tomar ticket</button>
-        </form>
+
+      <div class="col-md-3">
+        <h3>Taquilla</h3> 
+        <input type="button" class="btn btn-primary" id="done" onclick="pop_taquilla_client()" value="Siguiente Cliente">
+        <h5>Clientes por atender</h5>
+        <button class="btn btn-success btn-lg" type="button">
+          <span id="toattend1"></span>
+        </button>
+        <h5>Tickets: <span id="ticketlist1"></span></h5>
+
       </div>
-      <div class="col-md-6"></div>
+      <div class="col-md-3">
+        <h3>Taquilla Especial</h3> 
+        <input type="button" class="btn btn-primary" id="done" onclick="pop_taquilla_tercera_client()" value="Siguiente Cliente">
+        <h5>Clientes por atender</h5>
+        <button class="btn btn-success btn-lg" type="button">
+          <span id="toattend2"></span>
+        </button>
+        <h5>Tickets: <span id="ticketlist2"></span></h5>
+
+      </div>
+      <div class="col-md-3">
+        <h3>Atencion al Cliente</h3> 
+        <input type="button" class="btn btn-primary" id="done" onclick="pop_atencion_client()" value="Siguiente Cliente">
+        <h5>Clientes por atender</h5>
+        <button class="btn btn-success btn-lg" type="button">
+          <span id="toattend3"></span>
+        </button>
+        <h5>Tickets: <span id="ticketlist3"></span></h5>
+
+      </div>
+      <div class="col-md-3">
+        <h3>Atencion Especial</h3> 
+        <input type="button" class="btn btn-primary" id="done" onclick="pop_atencion_tercera_client()" value="Siguiente Cliente">
+        <h5>Clientes por atender</h5>
+        <button class="btn btn-success btn-lg" type="button">
+          <span id="toattend4"></span>
+        </button>
+        <h5>Tickets: <span id="ticketlist4"></span></h5>
+
+      </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-3"></div>
-      <div class="col-md-3"></div>
-      <div class="col-md-3"></div>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
   </div>
+</div>
 
-  <script src="js/qmatic.js"></script>
-  <script src="js/jquery-2.1.3.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+<script src="js/qmatic.js"></script>
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
