@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Qmatic</title>
+</head>
+<body>
+  <h1>Sistema de colas de MyBank<h1>
+  <h2>Clientes</h2>
+  <h3>Selecione una opcion:</h3>
+  <ul>
+    <li>
+    Taquilla 
+      <input type="button" id="newTicket" onclick="new_ticket(1)" value="Tomar ticket">
+    </li>
+    <li>
+      Taquilla Especial 
+      <input type="button" id="newTicket" onclick="new_ticket(2)" value="Tomar ticket">
+    </li>
+    <li>
+      Atencion al Cliente
+      <input type="button" id="newTicket" onclick="new_ticket(3)" value="Tomar ticket">
+    </li>
+    <li>
+      Atencion al Cliente Especial
+      <input type="button" id="newTicket" onclick="new_ticket(4)" value="Tomar ticket"> 
+    </li>
+  </ul>
+  <h4>Su numero de ticket <span id="newticket"></span></h4>
+  <h4>Hay <span id="people"></span> personas delante de usted.</h4>
+  <h4>El tiempo de espera aproximado es de  <span id="waitingtime"></span></h4>
+
+  <hr>
+
+  <h2>Agentes</h2>
+
+  <h3>Taquilla</h3> 
+  <input type="button" id="done" onclick="pop_taquilla_client()" value="Siguiente Cliente">
+
+  <h3>Taquilla Especial</h3> 
+  <input type="button" id="done" onclick="pop_taquilla_tercera_client()" value="Siguiente Cliente">
+
+  <h3>Atencion al Cliente</h3> 
+  <input type="button" id="done" onclick="pop_atencion_client()" value="Siguiente Cliente">
+
+  <h3>Atencion al Cliente Especial</h3> 
+  <input type="button" id="done" onclick="pop_atencion_tercera_client()" value="Siguiente Cliente">
+
+  <script src="js/qmatic.js"></script>
+</body>
+</html>
