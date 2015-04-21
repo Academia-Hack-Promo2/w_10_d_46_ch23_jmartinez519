@@ -10,14 +10,19 @@ var atencion_cliente_tercera_queu = [];
 function new_ticket(queu){
   switch (queu) {
     case 1:
-      tqnumber += 1
-      taquilla_queu.push(tqnumber)
-      people = taquilla_queu.length
-      wait_time = (taquilla_queu.length * 3) - 3
-      document.getElementById("newticket").innerHTML = tqnumber;
-      document.getElementById("people").innerHTML = people;
-      document.getElementById("waitingtime").innerHTML = wait_time;
-      break;
+      if (tqnumber === 299){
+        tqnumber = 100
+      }
+      else{
+        tqnumber += 1
+        taquilla_queu.push(tqnumber)
+        people = taquilla_queu.length
+        wait_time = (taquilla_queu.length * 3) - 3
+        document.getElementById("newticket").innerHTML = tqnumber;
+        document.getElementById("people").innerHTML = people;
+        document.getElementById("waitingtime").innerHTML = wait_time;
+        break;
+      }
     case 2:
       ttqnumber += 1
       taquilla_tercera_queu.push(ttqnumber)
